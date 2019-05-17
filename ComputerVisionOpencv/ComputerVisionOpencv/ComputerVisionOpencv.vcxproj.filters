@@ -29,5 +29,8 @@
     <ClCompile Include="ComputerVisionOpencv.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LocalFeatureMatching.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
