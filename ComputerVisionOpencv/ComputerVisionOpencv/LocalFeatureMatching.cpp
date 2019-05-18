@@ -11,24 +11,23 @@ using namespace std;
 using namespace cv;
 
 
-using namespace cv;
 
-int main()
-{
-	Mat image = imread("Det.jpg", 1);
+	void test() {
 
-	imshow("display", image);
+		Mat image = imread("C:/Users/Dell/Desktop/data_dir/Fish/img/0001.jpg");
+		//Mat image = imread("Det.jpg", 1);
 
-	if (image.empty())
-	{
-		cout << "Could not open or find the image" << endl;
-		cin.get(); //wait for any key press
+		imshow("display", image);
+
+		if (image.empty())
+		{
+			cout << "Could not open or find the image" << endl;
+			cin.get(); //wait for any key press
+
+		}
+
+
+		waitKey();
 
 	}
-
-
-	waitKey();
-
-	return 0;
-}
 
