@@ -1,0 +1,6 @@
+﻿  pch.cpp
+  EdgeDetection.cpp
+d:\computer_vision_opencv\edgedetection\edgedetection\edgedetection.cpp(32): error C2872: 'ratio': ambiguous symbol
+  d:\computer_vision_opencv\edgedetection\edgedetection\edgedetection.cpp(21): note: could be 'int ratio'
+  c:\program files (x86)\mi\vc\tools\msvc\14.16.27023\include\ratio(108): note: or       'std::ratio'
+C:\Program Files (x86)\Mi\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets(423,5): error MSB6006: "CL.exe" exited with code 2.
