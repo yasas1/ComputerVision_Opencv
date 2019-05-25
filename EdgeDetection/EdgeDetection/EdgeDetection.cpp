@@ -38,9 +38,28 @@ void CannyThreshold(int, void*)
 	imshow("Edge Map", dst);
 }
 
+void Canny2()
+{
+	Mat src1;
+	src1 = imread("C:/Users/Dell/Desktop/data_dir/Fish/img/0001.jpg");
+	namedWindow("Original image");
+	imshow("Original image", src1);
+
+	Mat gray, edge, draw;
+	cvtColor(src1, gray, COLOR_BGR2GRAY);
+
+	Canny(gray, edge, 50, 150, 3);
+
+	edge.convertTo(draw, CV_8U);
+	namedWindow("image", WINDOW_AUTOSIZE);
+	imshow("image", draw);
+
+	waitKey(0);
+}
+
 int main()
 {
-	src = imread("C:/Users/Dell/Desktop/data_dir/Fish/img/0001.jpg");
+	/* src = imread("C:/Users/Dell/Desktop/data_dir/Fish/img/0001.jpg");
 
 	if (!src.data)
 	{
@@ -63,7 +82,9 @@ int main()
 	CannyThreshold(0, 0);
 
 	/// Wait until user exit program by pressing a key
-	waitKey(0);
+	waitKey(0); */
+
+	Canny2();
 
 	return 0;
 }
