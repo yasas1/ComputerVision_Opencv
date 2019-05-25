@@ -4,18 +4,38 @@
 #include "pch.h"
 #include <iostream>
 
-int main()
+#include "opencv2/imgproc.hpp"
+#include "opencv2/highgui.hpp"
+#include <stdlib.h>
+#include <stdio.h>
+
+using namespace std;
+using namespace cv;
+
+void cannyEdgeDetec(Mat img)
 {
-    std::cout << "Hello World!\n"; 
+	Mat src = img;
+	//src = imread("C:/Users/Dell/Desktop/data_dir/Fish/img/0001.jpg");
+	namedWindow("Original image");
+	imshow("Original image", src);
+
+	Mat gray, edge, draw;
+	cvtColor(src, gray, COLOR_BGR2GRAY);
+
+	Canny(gray, edge, 50, 150, 3);
+
+	edge.convertTo(draw, CV_8U);
+	namedWindow("image", WINDOW_AUTOSIZE);
+	imshow("image", draw);
+
+	waitKey(0);
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+int main()
+{
+	Mat img_1, img_2;
+	img_1 = imread("C:/Users/Dell/Desktop/data_dir/Fish/img/0001.jpg");
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+	cannyEdgeDetec(img_1);
+}
+
